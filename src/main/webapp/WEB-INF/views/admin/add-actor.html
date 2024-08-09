@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from hotflix.volkovdesign.com/admin/add-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 09:43:03 GMT -->
+<head>
+  <th:block th:insert="layout/for-admin::link-admin"></th:block>
+</head>
+
+<body>
+<!-- header -->
+<header class="header">
+  <div class="header__content">
+    <!-- header logo -->
+    <a href="index.html" class="header__logo">
+      <img src="img/logo.svg" alt="">
+    </a>
+    <!-- end header logo -->
+
+    <!-- header menu btn -->
+    <button class="header__btn" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- end header menu btn -->
+  </div>
+</header>
+<!-- end header -->
+
+<!-- sidebar -->
+<th:block th:insert="layout/for-admin::sidebar-admin"></th:block>
+<!-- end sidebar -->
+
+<!-- main content -->
+<main class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- main title -->
+      <div class="col-12">
+        <div class="main__title">
+          <h2>Add new actor</h2>
+        </div>
+      </div>
+      <!-- end main title -->
+
+      <!-- form -->
+      <div class="col-12">
+        <form action="/admin/addActor" method="post" th:object="${actorRequest}" class="sign__form sign__form--add" enctype="multipart/form-data">
+
+          <div class="row">
+            <div class="col-12 col-xl-7">
+              <div class="row">
+                <div class="col-12">
+                  <div class="sign__group">
+                    <input type="text" class="sign__input" placeholder="Name" th:field="*{name}">
+                  </div>
+                  <div class="sign__group">
+                    <input type="file" class="sign__input" placeholder="Avatar" th:field="*{multipartFile}">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="sign__btn sign__btn--small"><span>Add</span></button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <!-- end form -->
+    </div>
+  </div>
+</main>
+<!-- end main content -->
+
+<!-- JS -->
+<th:block th:insert="layout/for-admin::script-admin"></th:block>
+</body>
+
+<!-- Mirrored from hotflix.volkovdesign.com/admin/add-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Jul 2024 09:43:03 GMT -->
+</html>
